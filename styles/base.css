@@ -48,7 +48,7 @@ main {
     max-width: 900px;
     margin: 20px auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     gap: 20px;
 }
 
@@ -63,6 +63,34 @@ main {
     max-width: 100%;
     border-radius: 5px;
 }
+.card h2{
+    background-color: #064635;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+.card h3 {
+    clear: both; /* Ensures it appears below floated elements */
+    width: 100%; /* Makes sure it spans the full section */
+    text-align: center; /* Centers the text */
+    padding-bottom: 10px; /* Adds spacing below text */
+    position: relative; /* Needed for ::after */
+    font-style: italic; /* Makes the text italic */
+}
+
+.card h3::after {
+    content: ""; /* Creates the underline */
+    display: block;
+    width: 80%; /* Set the underline to 80% of the h3 width */
+    height: 2px; /* Thickness of the underline */
+    background-color: #333; /* Change color as needed */
+    position: absolute;
+    bottom: 0; /* Aligns it under the text */
+    left: 50%; /* Start positioning from the center */
+    transform: translateX(-50%); /* Centers the underline */
+}
+
 
 /* Footer Styling */
 footer {
@@ -71,4 +99,27 @@ footer {
     text-align: center;
     padding: 1rem;
     grid-column: span 2;
+}
+/* image stuff */
+.align-right {
+    float: right;
+    margin-left: 10px; /* Adjust margin for spacing */
+    margin-bottom: 10px; /* Optional: adds spacing below the image */
+    height: 150px
+}
+/*
+.align-left {
+    float: left;
+     margin-right: 5px;
+    margin-bottom: 5px;
+    width: 200px;
+} */
+.text-image-container {
+    display:flex;
+    align-items: center;
+    gap: 15px;
+}
+.align-left {
+    height: 200px;
+    width: auto;
 }
